@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-label {
+    display: flex;
+    width: 85px;
+    height: 35px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+    background: #222;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.theme-icon {
+    width: 30px;
+}
+
+#dark-theme-icon {
+    margin-left: -4px;
+}
+
+label #light-theme-icon {
+    transition: 0.3s;
+    opacity: 1;
+}
+
+label #dark-theme-icon {
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateX(50px) rotate(250deg);
+}
+
+label .ball {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    left: 5px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#switch {
+    display: none;
+}
+
+#switch:checked + .icon-label {
+    background: #c0c0c0;
+}
+
+#switch:checked + .icon-label #light-theme-icon {
+    transform: translateX(-47px) rotate(250deg);
+    opacity: 0;
+}
+
+#switch:checked + .icon-label #dark-theme-icon {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+}
+
+#switch:checked + .icon-label .ball {
+    background: #222;
+    transform: translateX(50px);
+}
